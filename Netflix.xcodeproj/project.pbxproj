@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD272CC6E56100754AE4 /* HomeView.swift */; };
+		DBEEDD2B2CC6FB4100754AE4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DBEEDD2A2CC6FB4100754AE4 /* SDWebImageSwiftUI */; };
 		DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09012CBC0682001FE58C /* NetflixApp.swift */; };
 		DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09032CBC0682001FE58C /* ContentView.swift */; };
 		DBEF09062CBC0683001FE58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEF09052CBC0683001FE58C /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEEDD2B2CC6FB4100754AE4 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = Netflix;
+			packageProductDependencies = (
+				DBEEDD2A2CC6FB4100754AE4 /* SDWebImageSwiftUI */,
+			);
 			productName = Netflix;
 			productReference = DBEF08FE2CBC0682001FE58C /* Netflix.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = DBEF08F52CBC0682001FE58C;
+			packageReferences = (
+				DBEEDD292CC6FB4100754AE4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = DBEF08FF2CBC0682001FE58C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -346,6 +354,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBEEDD292CC6FB4100754AE4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBEEDD2A2CC6FB4100754AE4 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBEEDD292CC6FB4100754AE4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBEF08F62CBC0682001FE58C /* Project object */;
 }
