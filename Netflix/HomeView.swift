@@ -6,8 +6,27 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct HomeView: View {
+
+  let posterImageLinks = [
+      "https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+      "https://image.tmdb.org/t/p/w500/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
+      "https://image.tmdb.org/t/p/w500/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+      "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+      "https://image.tmdb.org/t/p/w500/qpdFKDvJS7oLKTcBLXOaMwUESbs.jpg",
+      "https://image.tmdb.org/t/p/w500/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg",
+      "https://image.tmdb.org/t/p/w500/izuzUb0sDokqp9o8utVfsrSJuy5.jpg",
+      "https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+      "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+      "https://image.tmdb.org/t/p/w500/l1175hgL5DoXnqeZQCcU3eZIdhX.jpg",
+      "https://image.tmdb.org/t/p/w500/iz2GabtToVB05gLTVSH7ZvFtsMM.jpg",
+      "https://image.tmdb.org/t/p/w500/3EpZ2ksjijmdr8BhISP03PYzNFW.jpg",
+      "https://image.tmdb.org/t/p/w500/hPIWQT70wQK6akqfLXByEvr62u0.jpg"
+  ]
+
     var body: some View {
       ScrollView {
 
@@ -48,11 +67,17 @@ struct HomeView: View {
             .foregroundColor(.white)
 
           ScrollView(.horizontal) {
+
             HStack(spacing: 10) {
-              ForEach(1..<10){item in
-                Rectangle()
-                  .frame(width: 106, height: 188)
-                  .foregroundColor(.red)
+
+
+
+              ForEach(1..<posterImageLinks.count){index in
+                WebImage(url: URL(string: posterImageLinks[index]))
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 106, height: 188)
+                            .clipped()
               }
             }
           }
