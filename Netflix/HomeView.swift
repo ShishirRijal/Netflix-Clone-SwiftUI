@@ -28,65 +28,61 @@ struct HomeView: View {
   ]
 
     var body: some View {
-      ScrollView {
+      NavigationStack {
+        ScrollView {
 
-        ZStack(alignment: .top) {
-          GeometryReader { geometry in
-            Image("CaptainMarvel")
-              .resizable()
-              .aspectRatio(contentMode: .fill)
-              .frame(width: geometry.size.width, height: geometry.size.height*1.2 )
-              .overlay(
-                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.4), Color.black.opacity(0.1), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
-              )
+          ZStack(alignment: .top) {
+            GeometryReader { geometry in
+              Image("CaptainMarvel")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: geometry.size.width, height: geometry.size.height*1.2 )
+                .overlay(
+                  LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.4), Color.black.opacity(0.1), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
+                )
+
+            }
+
+            VStack {
+              Spacer()
+
+              HomeViewButtons()
+            }
+            .padding(.top, 30)
+            .frame(width: .infinity, height: UIScreen.main.bounds.height*0.6)
+
 
           }
+          Spacer()
+            .frame(height: 50)
 
-          VStack {
-            HomeViewHeader()
-
-            Spacer()
-
-            // Buttons
-
-
-            HomeViewButtons()
-          }
-          .padding(.top, 30)
-          .frame(width: .infinity, height: UIScreen.main.bounds.height*0.6)
+          ContinueWatching(posterImageLinks: posterImageLinks)
 
 
         }
-        Spacer()
-          .frame(height: 50)
+        .preferredColorScheme(.dark)
+        .toolbar {
+          ToolbarItem(placement: .topBarLeading) {
+            Image("LetterLogo")
+              .frame(width: 18, height: 32)
+          }
 
-        VStack (alignment: .leading) {
-          Text("Continue Watching")
-            .font(.title3)
-            .fontWeight(.medium)
-            .foregroundColor(.white)
+          ToolbarItem(placement: .topBarTrailing) {
+            HStack(spacing: 20) {
+              Image(systemName: "airplayvideo")
+                .resizable()
+                .frame(width: 24, height: 24)
+                .foregroundColor(.white)
 
-          ScrollView(.horizontal) {
-
-            HStack(spacing: 10) {
-
-
-
-              ForEach(1..<posterImageLinks.count){index in
-                WebImage(url: URL(string: posterImageLinks[index]))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 106, height: 188)
-                            .clipped()
-              }
+              Image("ProfileIcon")
+                .resizable()
+                .frame(width: 24, height: 24)
             }
           }
         }
-
-
-      }
-      .background(Color.black)
+        
       .ignoresSafeArea()
+      }
     }
 }
 
@@ -149,25 +145,33 @@ struct HomeViewButtons: View {
   }
 }
 
-struct HomeViewHeader: View {
+
+
+struct ContinueWatching: View {
+  let posterImageLinks: [String]
+
   var body: some View {
-    HStack {
-      Image("LetterLogo")
-        .frame(width: 18, height: 32)
+    VStack (alignment: .leading) {
+      Text("Continue Watching")
+        .font(.title3)
+        .fontWeight(.medium)
+        .foregroundColor(.white)
       
-      Spacer()
-      
-      HStack(spacing: 20) {
-        Image(systemName: "airplayvideo")
-          .resizable()
-          .frame(width: 24, height: 24)
-          .foregroundColor(.white)
+      ScrollView(.horizontal) {
         
-        Image("ProfileIcon")
-          .resizable()
-          .frame(width: 24, height: 24)
+        HStack(spacing: 10) {
+          
+          
+          
+          ForEach(1..<posterImageLinks.count){index in
+            WebImage(url: URL(string: posterImageLinks[index]))
+              .resizable()
+              .aspectRatio(contentMode: .fill)
+              .frame(width: 106, height: 188)
+              .clipped()
+          }
+        }
       }
     }
-    .padding(.all, 20)
   }
 }
