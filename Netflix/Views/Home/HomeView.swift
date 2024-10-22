@@ -173,30 +173,3 @@ struct ContinueWatching: View {
 
 
 
-struct CustomButton: View {
-    let title: String
-    let image: String?
-    let action: () -> Void
-
-    // Colors for light and dark mode
-    var lightModeColor: Color = .black
-    var darkModeColor: Color = .white
-
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                if let imageName = image {
-                    Image(systemName: imageName)
-                }
-                Text(title)
-                    .font(.bodyFont) 
-            }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 30)
-            .background(.white)
-            .foregroundColor(.customBlack)
-            .cornerRadius(8)
-        }
-    }
-
-}
