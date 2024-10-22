@@ -13,8 +13,6 @@ struct MainTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-
-
             HomeView()
                     .tabItem {
                       CustomTabLabel(title: "Home", icon: "house")
@@ -39,8 +37,7 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.downloads)
         }
-
-        .accentColor(.white)
+        .accentColor(.primaryFontColor)
 
     }
 }
@@ -54,10 +51,10 @@ struct CustomTabLabel: View {
         Label {
             Text(title)
             .font(.bodyFont)
-                .foregroundColor(.white)
+//                .foregroundColor(.white)
         } icon: {
             Image(systemName: icon)
-                .foregroundColor(.white)
+//                .foregroundColor(.white)
         }
     }
 }

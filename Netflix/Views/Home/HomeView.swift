@@ -21,9 +21,12 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+              VStack {
                 HeroSection()
                 Spacer().frame(height: 50)
               MoviesAndShowsView(posterImageLinks: posterImageLinks)
+                  .padding(.all, 10)
+              }
             }
             .preferredColorScheme(.dark)
             .toolbar {
@@ -46,7 +49,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .ignoresSafeArea()
+//            .ignoresSafeArea()
         }
     }
 }
@@ -60,13 +63,18 @@ struct HeroSection: View {
     var body: some View {
         ZStack(alignment: .top) {
             GeometryReader { geometry in
+              VStack {
                 Image("CaptainMarvel")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
-                    .overlay(
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0.2), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
+                      .resizable()
+
+                      .aspectRatio(contentMode: .fill)
+                      .frame(width: geometry.size.width, height: geometry.size.height * 1)
+                      .overlay(
+                          LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0.2), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
                     )
+                      .offset(y: -70)
+
+              }
             }
 
             VStack {
@@ -75,11 +83,14 @@ struct HeroSection: View {
                 // Movie Name and Tags
                 Text("Captain Marvel")
                     .font(.heroHeaderFont)
+                    .foregroundColor(.customWhite)
                     .lineLimit(2)
                     .padding(.bottom, 3)
+
                 Text("Sci-Fi • Adventure • Fantasy")
                     .font(.customFont(.light, 16))
                     .padding(.bottom, 30)
+                    .foregroundColor(.customWhite)
 
                 HomeViewButtons()
             }
@@ -96,6 +107,7 @@ struct MoviesAndShowsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             CategoryView(title: "Continue Watching", posterImageLinks: posterImageLinks, isWatching: true)
+
             CategoryView(title: "Netflix Originals", posterImageLinks: posterImageLinks)
             CategoryView(title: "Popular on Netflix", posterImageLinks: posterImageLinks)
             CategoryView(title: "Trending Now", posterImageLinks: posterImageLinks)
@@ -114,8 +126,7 @@ struct CategoryView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.titleFont)
-                .foregroundColor(.white)
-                .padding(.bottom, 10)
+
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
@@ -132,6 +143,7 @@ struct CategoryView: View {
                                     Image(systemName: "play.circle")
                                         .resizable()
                                         .frame(width: 50, height: 50)
+                                        .foregroundColor(.customWhite)
                                 }
                             }
                             .cornerRadius(8)
