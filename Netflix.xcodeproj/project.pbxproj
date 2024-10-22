@@ -72,6 +72,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DBEEDD402CC78EC600754AE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBEEDD412CC78ECE00754AE4 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBEEDD412CC78ECE00754AE4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DBEEDD272CC6E56100754AE4 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		DBEF08F52CBC0682001FE58C = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +107,7 @@
 		DBEF09002CBC0682001FE58C /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				DBEEDD402CC78EC600754AE4 /* Views */,
 				DBEEDD342CC77BA000754AE4 /* Extensions */,
 				DBEEDD312CC774AF00754AE4 /* Info.plist */,
 				DBEEDD2C2CC773FE00754AE4 /* CustomFonts */,
@@ -98,7 +115,6 @@
 				DBEF09032CBC0682001FE58C /* ContentView.swift */,
 				DBEF09052CBC0683001FE58C /* Assets.xcassets */,
 				DBEF09072CBC0683001FE58C /* Preview Content */,
-				DBEEDD272CC6E56100754AE4 /* HomeView.swift */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";
