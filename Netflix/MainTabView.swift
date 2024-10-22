@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct MainTabView: View {
-    @State private var selectedTab: Tabs = .search
+    @State private var selectedTab: Tabs = .home
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -25,9 +25,9 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.search)
 
-            Text("Coming Soon")
+            NewAndHotView()
                     .tabItem {
-                      CustomTabLabel(title: "Coming Soon", icon: "play.rectangle.on.rectangle")
+                      CustomTabLabel(title: "New and Hot", icon: "play.rectangle.on.rectangle")
                     }
                     .tag(Tabs.comingSoon)
 
