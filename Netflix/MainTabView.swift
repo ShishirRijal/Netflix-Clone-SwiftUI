@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct MainTabView: View {
-    @State private var selectedTab: Tabs = .home
+    @State private var selectedTab: Tabs = .search
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -19,7 +19,7 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.home)
 
-            Text("Search")
+          SearchView()
                     .tabItem {
                       CustomTabLabel(title: "Search", icon: "magnifyingglass")
                     }
