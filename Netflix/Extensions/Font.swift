@@ -22,7 +22,23 @@ enum CustomFont: String {
 }
 
 extension Font {
-    // Corrected closure with proper return values and syntax
+
+  // Define Title Font Style
+  static var titleFont: Font {
+      return .custom("NetflixSans-Medium", size: 18) // Custom font for title
+  }
+
+  // Define Hero Header Font Style
+  static var heroHeaderFont: Font {
+      return .custom("NetflixSans-Bold", size: 30) // Custom font for hero header
+  }
+
+  // Define Body Font Style
+  static var bodyFont: Font {
+      return .custom("NetflixSans-Medium", size: 14) // Custom font for body text
+  }
+
+
     static let customFont: (FontWeight, CGFloat) -> Font = { fontType, size in
         switch fontType {
         case .light:

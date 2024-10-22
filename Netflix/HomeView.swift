@@ -32,28 +32,31 @@ struct HomeView: View {
         ScrollView {
 
           ZStack(alignment: .top) {
+
+            // Hero Image
             GeometryReader { geometry in
               Image("CaptainMarvel")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: geometry.size.width, height: geometry.size.height*1.2 )
                 .overlay(
-                  LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.4), Color.black.opacity(0.1), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
+                  LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0.2), Color.black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
                 )
 
             }
-
+            
             VStack {
               Spacer()
-
+              
+              // Movie Name and Tags
               Text("Captain Marvel")
-                .font(.custom("NetflixSans-Bold", size: 20))
-                .fontWeight(.bold)
-
-
+                .font(.heroHeaderFont)
+                .lineLimit(2)
+                .padding(.bottom, 3)
+              Text("Sci-Fi • Adventure • Fantasy")
+                .font(.customFont(.light, 16))
                 .padding(.bottom, 30)
 
-//              Spacer()
 
               HomeViewButtons()
             }
@@ -73,7 +76,8 @@ struct HomeView: View {
         .toolbar {
           ToolbarItem(placement: .topBarLeading) {
             Image("LetterLogo")
-              .frame(width: 18, height: 32)
+              .resizable()
+              .frame(width: 20, height: 32)
           }
 
           ToolbarItem(placement: .topBarTrailing) {
@@ -100,61 +104,43 @@ struct HomeView: View {
 }
 
 
-
 struct HomeViewButtons: View {
-  var body: some View {
-    HStack {
-      
-      
-      Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-        VStack{
-          Image(systemName: "plus").foregroundColor(.white)
-          Spacer().frame(height: 2)
-          Text("My List")
-//            .font(Font.custom("NetflixSans-Bold", size: 20))
 
-
-            .font(.caption)
-//            .fontWeight(.medium)
+    // Reusable button view for My List and Info buttons
+    private func iconButton(image: String, text: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack {
+                Image(systemName: image)
+                    .font(.title2)
+                Spacer().frame(height: 2)
+                Text(text)
+                    .font(.bodyFont)
+            }
             .foregroundColor(.white)
         }
-        
-      })
-      Spacer()
-      
-      Button(action: {}, label: {
-        HStack {
-          Image(systemName: "play.fill")
-            .foregroundColor(.black)
-          Text("Play")
-            .font(.caption)
-            .fontWeight(.medium)
-            .foregroundColor(.black)
-          
-        }
-      })
-      .padding(.vertical, 8)
-      .padding(.horizontal, 20)
-      .background(.white)
-      .cornerRadius(4)
-      
-      Spacer()
-      
-      Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-        VStack{
-          Image(systemName: "info.circle").foregroundColor(.white)
-          Spacer().frame(height: 2)
-          Text("Info")
-            .font(.caption)
-            .fontWeight(.medium)
-            .foregroundColor(.white)
-        }
-        
-      })
-      
     }
-    .frame(width: UIScreen.main.bounds.width*0.7)
-  }
+
+    var body: some View {
+        HStack {
+            iconButton(image: "plus", text: "My List", action: {
+                // Action here
+            })
+
+            Spacer()
+
+            // Play Button
+          CustomButton(title: "Play", image: "play.fill") {
+                          print("Play button tapped")
+                      }
+
+            Spacer()
+
+            iconButton(image: "info.circle", text: "Info", action: {
+                // Add your action here
+            })
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.7)
+    }
 }
 
 
@@ -165,20 +151,12 @@ struct ContinueWatching: View {
   var body: some View {
     VStack (alignment: .leading) {
       Text("Continue Watching")
-        .font(.custom("Lato-Bold", size:16))
-//        .font(.custom("Baskerville-SemiBold", size: 23))
-//        .font(.bodyFont())
-//        .font(.title3)
-//        .font(.custom("Lato-Bold", size: 20))
-//        .fontWeight(.bold)
+        .font(.titleFont)
         .foregroundColor(.white)
       
       ScrollView(.horizontal) {
-        
         HStack(spacing: 10) {
-          
-          
-          
+
           ForEach(1..<posterImageLinks.count){index in
             WebImage(url: URL(string: posterImageLinks[index]))
               .resizable()
@@ -186,8 +164,39 @@ struct ContinueWatching: View {
               .frame(width: 106, height: 188)
               .clipped()
           }
+
         }
       }
     }
   }
+}
+
+
+
+struct CustomButton: View {
+    let title: String
+    let image: String?
+    let action: () -> Void
+
+    // Colors for light and dark mode
+    var lightModeColor: Color = .black
+    var darkModeColor: Color = .white
+
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                if let imageName = image {
+                    Image(systemName: imageName)
+                }
+                Text(title)
+                    .font(.bodyFont) 
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 30)
+            .background(.white)
+            .foregroundColor(.customBlack)
+            .cornerRadius(8)
+        }
+    }
+
 }

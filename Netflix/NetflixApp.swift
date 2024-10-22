@@ -13,17 +13,10 @@ struct NetflixApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .foregroundColor(.white)
         }
+      
     }
 
-  init() {
-    print("Font families:")
-      for family in UIFont.familyNames {
-          print("Family: \(family)")
-          for name in UIFont.fontNames(forFamilyName: family) {
-              print("   - \(name)")
-          }
-      }
-  }
 
 }

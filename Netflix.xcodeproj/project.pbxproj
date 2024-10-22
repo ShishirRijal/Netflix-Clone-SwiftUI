@@ -15,6 +15,7 @@
 		DBEEDD3A2CC7804D00754AE4 /* NetflixSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD2F2CC7745800754AE4 /* NetflixSans-Light.otf */; };
 		DBEEDD3B2CC7805000754AE4 /* NetflixSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD302CC7745800754AE4 /* NetflixSans-Regular.otf */; };
 		DBEEDD3D2CC7832600754AE4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD3C2CC7832600754AE4 /* Text.swift */; };
+		DBEEDD3F2CC7852600754AE4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD3E2CC7852600754AE4 /* Color.swift */; };
 		DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09012CBC0682001FE58C /* NetflixApp.swift */; };
 		DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09032CBC0682001FE58C /* ContentView.swift */; };
 		DBEF09062CBC0683001FE58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEF09052CBC0683001FE58C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		DBEEDD312CC774AF00754AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DBEEDD352CC77BAE00754AE4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		DBEEDD3C2CC7832600754AE4 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		DBEEDD3E2CC7852600754AE4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DBEF08FE2CBC0682001FE58C /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEF09012CBC0682001FE58C /* NetflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixApp.swift; sourceTree = "<group>"; };
 		DBEF09032CBC0682001FE58C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				DBEEDD352CC77BAE00754AE4 /* Font.swift */,
 				DBEEDD3C2CC7832600754AE4 /* Text.swift */,
+				DBEEDD3E2CC7852600754AE4 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */,
 				DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */,
 				DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */,
+				DBEEDD3F2CC7852600754AE4 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
