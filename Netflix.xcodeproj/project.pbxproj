@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD272CC6E56100754AE4 /* HomeView.swift */; };
 		DBEEDD2B2CC6FB4100754AE4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DBEEDD2A2CC6FB4100754AE4 /* SDWebImageSwiftUI */; };
+		DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD352CC77BAE00754AE4 /* Font.swift */; };
+		DBEEDD372CC7804500754AE4 /* NetflixSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD2E2CC7745800754AE4 /* NetflixSans-Bold.otf */; };
+		DBEEDD392CC7804A00754AE4 /* NetflixSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD2D2CC7745800754AE4 /* NetflixSans-Medium.otf */; };
+		DBEEDD3A2CC7804D00754AE4 /* NetflixSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD2F2CC7745800754AE4 /* NetflixSans-Light.otf */; };
+		DBEEDD3B2CC7805000754AE4 /* NetflixSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DBEEDD302CC7745800754AE4 /* NetflixSans-Regular.otf */; };
 		DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09012CBC0682001FE58C /* NetflixApp.swift */; };
 		DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09032CBC0682001FE58C /* ContentView.swift */; };
 		DBEF09062CBC0683001FE58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEF09052CBC0683001FE58C /* Assets.xcassets */; };
@@ -17,6 +22,12 @@
 
 /* Begin PBXFileReference section */
 		DBEEDD272CC6E56100754AE4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DBEEDD2D2CC7745800754AE4 /* NetflixSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Medium.otf"; sourceTree = "<group>"; };
+		DBEEDD2E2CC7745800754AE4 /* NetflixSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Bold.otf"; sourceTree = "<group>"; };
+		DBEEDD2F2CC7745800754AE4 /* NetflixSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Light.otf"; sourceTree = "<group>"; };
+		DBEEDD302CC7745800754AE4 /* NetflixSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Regular.otf"; sourceTree = "<group>"; };
+		DBEEDD312CC774AF00754AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DBEEDD352CC77BAE00754AE4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		DBEF08FE2CBC0682001FE58C /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEF09012CBC0682001FE58C /* NetflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixApp.swift; sourceTree = "<group>"; };
 		DBEF09032CBC0682001FE58C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +47,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DBEEDD2C2CC773FE00754AE4 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				DBEEDD2E2CC7745800754AE4 /* NetflixSans-Bold.otf */,
+				DBEEDD2D2CC7745800754AE4 /* NetflixSans-Medium.otf */,
+				DBEEDD2F2CC7745800754AE4 /* NetflixSans-Light.otf */,
+				DBEEDD302CC7745800754AE4 /* NetflixSans-Regular.otf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		DBEEDD342CC77BA000754AE4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DBEEDD352CC77BAE00754AE4 /* Font.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DBEF08F52CBC0682001FE58C = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +85,9 @@
 		DBEF09002CBC0682001FE58C /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				DBEEDD342CC77BA000754AE4 /* Extensions */,
+				DBEEDD312CC774AF00754AE4 /* Info.plist */,
+				DBEEDD2C2CC773FE00754AE4 /* CustomFonts */,
 				DBEF09012CBC0682001FE58C /* NetflixApp.swift */,
 				DBEF09032CBC0682001FE58C /* ContentView.swift */,
 				DBEF09052CBC0683001FE58C /* Assets.xcassets */,
@@ -136,8 +169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEEDD372CC7804500754AE4 /* NetflixSans-Bold.otf in Resources */,
 				DBEF09092CBC0683001FE58C /* Preview Assets.xcassets in Resources */,
+				DBEEDD3B2CC7805000754AE4 /* NetflixSans-Regular.otf in Resources */,
 				DBEF09062CBC0683001FE58C /* Assets.xcassets in Resources */,
+				DBEEDD392CC7804A00754AE4 /* NetflixSans-Medium.otf in Resources */,
+				DBEEDD3A2CC7804D00754AE4 /* NetflixSans-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */,
 				DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */,
 				DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */,
 				DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */,
@@ -286,6 +324,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Netflix/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Netflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,6 +353,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Netflix/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Netflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

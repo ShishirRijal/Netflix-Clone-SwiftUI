@@ -46,6 +46,15 @@ struct HomeView: View {
             VStack {
               Spacer()
 
+              Text("Captain Marvel")
+                .font(.custom("NetflixSans-Bold", size: 20))
+                .fontWeight(.bold)
+
+
+                .padding(.bottom, 30)
+
+//              Spacer()
+
               HomeViewButtons()
             }
             .padding(.top, 30)
@@ -102,8 +111,11 @@ struct HomeViewButtons: View {
           Image(systemName: "plus").foregroundColor(.white)
           Spacer().frame(height: 2)
           Text("My List")
+//            .font(Font.custom("NetflixSans-Bold", size: 20))
+
+
             .font(.caption)
-            .fontWeight(.medium)
+//            .fontWeight(.medium)
             .foregroundColor(.white)
         }
         
@@ -153,8 +165,12 @@ struct ContinueWatching: View {
   var body: some View {
     VStack (alignment: .leading) {
       Text("Continue Watching")
-        .font(.title3)
-        .fontWeight(.medium)
+        .font(.custom("Lato-Bold", size:16))
+//        .font(.custom("Baskerville-SemiBold", size: 23))
+//        .font(.bodyFont())
+//        .font(.title3)
+//        .font(.custom("Lato-Bold", size: 20))
+//        .fontWeight(.bold)
         .foregroundColor(.white)
       
       ScrollView(.horizontal) {
