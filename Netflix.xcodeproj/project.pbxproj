@@ -20,12 +20,12 @@
 		DBEEDD462CC798DA00754AE4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD452CC798DA00754AE4 /* MainTabView.swift */; };
 		DBEEDD482CC834F600754AE4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD472CC834F600754AE4 /* SearchView.swift */; };
 		DBEEDD4C2CC8411500754AE4 /* NewAndHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD4B2CC8411500754AE4 /* NewAndHotView.swift */; };
-		DBEEDD4F2CC9639D00754AE4 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD4E2CC9639D00754AE4 /* MovieViewModel.swift */; };
-		DBEEDD512CC9641D00754AE4 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD502CC9641D00754AE4 /* MovieListView.swift */; };
 		DBEEDD582CC96E8400754AE4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD572CC96E8400754AE4 /* Secrets.swift */; };
 		DBEEDD5B2CC972DA00754AE4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD5A2CC972DA00754AE4 /* Movie.swift */; };
 		DBEEDD5D2CC97E5E00754AE4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD5C2CC97E5E00754AE4 /* NetworkManager.swift */; };
 		DBEEDD602CC983E400754AE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD5F2CC983E400754AE4 /* String.swift */; };
+		DBEEDD622CC9866A00754AE4 /* NewAndHotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD612CC9866A00754AE4 /* NewAndHotViewModel.swift */; };
+		DBEEDD642CC9873E00754AE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD632CC9873E00754AE4 /* Constants.swift */; };
 		DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09012CBC0682001FE58C /* NetflixApp.swift */; };
 		DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEF09032CBC0682001FE58C /* ContentView.swift */; };
 		DBEF09062CBC0683001FE58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEF09052CBC0683001FE58C /* Assets.xcassets */; };
@@ -46,12 +46,12 @@
 		DBEEDD452CC798DA00754AE4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DBEEDD472CC834F600754AE4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DBEEDD4B2CC8411500754AE4 /* NewAndHotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAndHotView.swift; sourceTree = "<group>"; };
-		DBEEDD4E2CC9639D00754AE4 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
-		DBEEDD502CC9641D00754AE4 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		DBEEDD572CC96E8400754AE4 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		DBEEDD5A2CC972DA00754AE4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DBEEDD5C2CC97E5E00754AE4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DBEEDD5F2CC983E400754AE4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DBEEDD612CC9866A00754AE4 /* NewAndHotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAndHotViewModel.swift; sourceTree = "<group>"; };
+		DBEEDD632CC9873E00754AE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DBEF08FE2CBC0682001FE58C /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEF09012CBC0682001FE58C /* NetflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixApp.swift; sourceTree = "<group>"; };
 		DBEF09032CBC0682001FE58C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				DBEEDD272CC6E56100754AE4 /* HomeView.swift */,
-				DBEEDD502CC9641D00754AE4 /* MovieListView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -140,7 +139,7 @@
 		DBEEDD4D2CC9634D00754AE4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				DBEEDD4E2CC9639D00754AE4 /* MovieViewModel.swift */,
+				DBEEDD612CC9866A00754AE4 /* NewAndHotViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 			children = (
 				DBEEDD572CC96E8400754AE4 /* Secrets.swift */,
 				DBEEDD5C2CC97E5E00754AE4 /* NetworkManager.swift */,
+				DBEEDD632CC9873E00754AE4 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -290,17 +290,17 @@
 				DBEEDD482CC834F600754AE4 /* SearchView.swift in Sources */,
 				DBEEDD3D2CC7832600754AE4 /* Text.swift in Sources */,
 				DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */,
+				DBEEDD622CC9866A00754AE4 /* NewAndHotViewModel.swift in Sources */,
 				DBEEDD462CC798DA00754AE4 /* MainTabView.swift in Sources */,
-				DBEEDD512CC9641D00754AE4 /* MovieListView.swift in Sources */,
 				DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */,
 				DBEEDD442CC7901C00754AE4 /* CustomButton.swift in Sources */,
 				DBEEDD4C2CC8411500754AE4 /* NewAndHotView.swift in Sources */,
-				DBEEDD4F2CC9639D00754AE4 /* MovieViewModel.swift in Sources */,
 				DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */,
 				DBEEDD5D2CC97E5E00754AE4 /* NetworkManager.swift in Sources */,
 				DBEEDD582CC96E8400754AE4 /* Secrets.swift in Sources */,
 				DBEEDD602CC983E400754AE4 /* String.swift in Sources */,
 				DBEEDD3F2CC7852600754AE4 /* Color.swift in Sources */,
+				DBEEDD642CC9873E00754AE4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

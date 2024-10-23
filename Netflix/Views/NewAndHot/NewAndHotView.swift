@@ -7,27 +7,33 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-
-// Main View
 struct NewAndHotView: View {
-    @State private var activeTag: String = "upcoming" // Track the active tag
+    @StateObject private var viewModel = NewAndHotViewModel()
     @Namespace var animation // Namespace for the matchedGeometryEffect
 
     var tags = ["upcoming", "hot", "released", "trending", "favourite"]
 
     var body: some View {
         VStack {
-            TagListView(tags: tags, activeTag: $activeTag, animation: animation)
+            TagListView(tags: tags, activeTag: $viewModel.activeTag, animation: animation)
                 .padding(.bottom, 20)
-
+          if viewModel.loading {
+                         ProgressView("Loading...") // Show loading indicator
+                             .progressViewStyle(CircularProgressViewStyle())
+                             .padding()
+                     }
+          else {
             ScrollView {
-                RecommendationView()
-                RecommendationView()
+                ForEach(viewModel.movies) { movie in
+                    RecommendationView(movie)
+                }
             }
+          }
+
         }
-        .preferredColorScheme(.dark)
     }
 }
+
 
 #Preview {
   NewAndHotView()
@@ -64,14 +70,19 @@ struct TagListView: View {
 
 // Recommendation View
 struct RecommendationView: View {
+  init(_ movie: Movie) {
+    self.movie = movie
+  }
+
+  var movie: Movie
     var body: some View {
         GeometryReader { geometry in
             let size = geometry.size
             VStack {
                 HStack(alignment: .top, spacing: 10) {
-                    DateView(date: "2024-10-23")
+                  DateView(date: movie.releaseDate)
                     Spacer()
-                    WebImage(url: URL(string: "https://image.tmdb.org/t/p/w500/hPIWQT70wQK6akqfLXByEvr62u0.jpg"))
+                  WebImage(url: URL(string: movie.getImageUrl()))
                         .resizable()
                         .scaledToFill()
                         .frame(height: size.height - 20)
@@ -91,10 +102,9 @@ struct DateView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("March") // Static month for demonstration
-                .font(.footnote)
-                .fontWeight(.semibold)
-            Text("01") // Static day for demonstration
+          Text(date.monthName() ?? "XXXX") // Static month for demonstration
+            .font(.bodyFont)
+          Text(date.day() ?? "XX") // Static day for demonstration
                 .font(.title)
                 .fontWeight(.semibold)
         }
