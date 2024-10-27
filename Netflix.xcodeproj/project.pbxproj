@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB9EB4C92CCE71B800CB46D0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */; };
+		DB9EB4CB2CCE743400CB46D0 /* VerticalIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */; };
 		DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD272CC6E56100754AE4 /* HomeView.swift */; };
 		DBEEDD2B2CC6FB4100754AE4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DBEEDD2A2CC6FB4100754AE4 /* SDWebImageSwiftUI */; };
 		DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEDD352CC77BAE00754AE4 /* Font.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIconButton.swift; sourceTree = "<group>"; };
 		DBEEDD272CC6E56100754AE4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DBEEDD2D2CC7745800754AE4 /* NetflixSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Medium.otf"; sourceTree = "<group>"; };
 		DBEEDD2E2CC7745800754AE4 /* NetflixSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NetflixSans-Bold.otf"; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB9EB4C72CCE71A600CB46D0 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
 		DBEEDD2C2CC773FE00754AE4 /* CustomFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 		DBEEDD402CC78EC600754AE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB9EB4C72CCE71A600CB46D0 /* MovieDetail */,
 				DBEEDD4A2CC8410500754AE4 /* NewAndHot */,
 				DBEEDD492CC8350600754AE4 /* Search */,
 				DBEEDD422CC7900800754AE4 /* Components */,
@@ -116,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DBEEDD432CC7901C00754AE4 /* CustomButton.swift */,
+				DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -285,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9EB4CB2CCE743400CB46D0 /* VerticalIconButton.swift in Sources */,
 				DBEEDD5B2CC972DA00754AE4 /* Movie.swift in Sources */,
 				DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */,
 				DBEEDD482CC834F600754AE4 /* SearchView.swift in Sources */,
@@ -299,6 +314,7 @@
 				DBEEDD5D2CC97E5E00754AE4 /* NetworkManager.swift in Sources */,
 				DBEEDD582CC96E8400754AE4 /* Secrets.swift in Sources */,
 				DBEEDD602CC983E400754AE4 /* String.swift in Sources */,
+				DB9EB4C92CCE71B800CB46D0 /* MovieDetailView.swift in Sources */,
 				DBEEDD3F2CC7852600754AE4 /* Color.swift in Sources */,
 				DBEEDD642CC9873E00754AE4 /* Constants.swift in Sources */,
 			);

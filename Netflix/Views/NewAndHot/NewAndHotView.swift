@@ -17,6 +17,8 @@ struct NewAndHotView: View {
         VStack {
             TagListView(tags: tags, activeTag: $viewModel.activeTag, animation: animation)
                 .padding(.bottom, 20)
+
+          Spacer()
           if viewModel.loading {
                          ProgressView("Loading...") // Show loading indicator
                              .progressViewStyle(CircularProgressViewStyle())
