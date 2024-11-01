@@ -10,10 +10,11 @@ import Foundation
 struct Movie: Codable, Identifiable {
     let id: Int
     let title: String
-    let originalTitle: String
-    let overview: String
+    let description: String
     let releaseDate: String
     let posterPath: String?
+    let creators: String
+    let cast: String
     let backdropPath: String?
     let voteAverage: Double
     let voteCount: Int
@@ -22,37 +23,55 @@ struct Movie: Codable, Identifiable {
     let adult: Bool
     let video: Bool
     let originalLanguage: String
+    let numberOfSeasons: Int?
+    let seasons: [Season]?
+    let isMovie: Bool
+    // MARK: Computed Property
+    // Map genre IDs to genre names
+      var genres: [String] {
+          return genreIDs.compactMap { GenreMapper.genreName(for: $0) }
+      }
 
-  // We map JSON keys to Swift property names using CodingKeys
-  enum CodingKeys: String, CodingKey {
-      case id
-      case title
-      case originalTitle = "original_title"
-      case overview
-      case releaseDate = "release_date"
-      case posterPath = "poster_path"
-      case backdropPath = "backdrop_path"
-      case voteAverage = "vote_average"
-      case voteCount = "vote_count"
-      case popularity
-      case genreIDs = "genre_ids"
-      case adult
-      case video
-      case originalLanguage = "original_language"
-  }
-  
-  func getImageUrl() -> String {
-    return "https://image.tmdb.org/t/p/w500/" + (self.backdropPath ?? "3EpZ2ksjijmdr8BhISP03PYzNFW.jpg")
-  }
+    // URL generation for images
+    func getImageUrl() -> String {
+        return "https://image.tmdb.org/t/p/w500" + (backdropPath ?? "/3EpZ2ksjijmdr8BhISP03PYzNFW.jpg")
+    }
+
 
 }
 
+enum MovieType {
+    case movie
+    case tvShow
+}
 
-
-
+// Response structure for decoding movie lists
 struct MovieResponse: Codable {
     let results: [Movie]
     let page: Int?
-    let total_pages: Int?
-    let total_results: Int?
+    let totalPages: Int?
+    let totalResults: Int?
 }
+
+
+// Example Usage
+let dummyMovie = Movie(
+  id: 1,
+  title: "Avengers: Endgame",
+  description: "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore order to the universe.",
+  releaseDate: "2019-04-26",
+  posterPath: "/hPIWQT70wQK6akqfLXByEvr62u0.jpg",
+  creators: "Anthony Russo, Joe Russo",
+  cast: "Robert Downey Jr., Chris Evans, Scarlett Johansson, Mark Ruffalo",
+  backdropPath: "/hPIWQT70wQK6akqfLXByEvr62u0.jpg",
+  voteAverage: 8.4,
+  voteCount: 1372,
+  popularity: 500.0,
+  genreIDs: [28, 12, 878], // Action, Adventure, Science Fiction
+  adult: false,
+  video: false,
+  originalLanguage: "en",
+  numberOfSeasons: 2,
+  seasons: dummySeasons,
+  isMovie: false
+)
