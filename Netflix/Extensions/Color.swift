@@ -14,6 +14,7 @@ extension Color {
     // Neutral colors
     static let customBlack = Color("Black")
     static let customGray = Color("Gray")
+    static let customGray1 = Color("Gray1")
     static let customGrayDark1 = Color("GrayDark1")
     static let customGrayDark2 = Color("GrayDark2")
     static let customGrayDark3 = Color("GrayDark3")
