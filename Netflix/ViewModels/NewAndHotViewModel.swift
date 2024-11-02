@@ -17,25 +17,26 @@ class NewAndHotViewModel: ObservableObject {
 
   // Function to fetch popular movies
   func fetchMovies() {
-    loading = true
-    guard let url = URL(string: Constant.upcomingUrl) else {
-          print("Invalid URL")
-          return
-      }
-
-      NetworkManager.shared.performRequest(url: url) { (result: Result<MovieResponse, Error>) in
-          switch result {
-          case .success(let movieResponse):
-              DispatchQueue.main.async {
-                  self.movies = movieResponse.results
-                  self.loading = false
-              }
-          case .failure(let error):
-              print("Error fetching movies: \(error)")
-            self.movies = []
-            self.loading = false
-          }
-      }
+    movies = [dummyMovie, dummyMovie, dummyMovie]
+//    loading = true
+//    guard let url = URL(string: Constant.upcomingUrl) else {
+//          print("Invalid URL")
+//          return
+//      }
+//
+//      NetworkManager.shared.performRequest(url: url) { (result: Result<MovieResponse, Error>) in
+//          switch result {
+//          case .success(let movieResponse):
+//              DispatchQueue.main.async {
+//                  self.movies = movieResponse.results
+//                  self.loading = false
+//              }
+//          case .failure(let error):
+//              print("Error fetching movies: \(error)")
+//            self.movies = []
+//            self.loading = false
+//          }
+//      }
   }
 
 }
