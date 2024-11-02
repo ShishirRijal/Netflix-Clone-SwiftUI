@@ -6,43 +6,75 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct MovieDetailView: View {
-    var body: some View {
+    @StateObject private var viewModel: MovieDetailViewModel
 
-
-
-
-
-
-
-      // MARK: Action Buttons
-      // My List
-      HStack(spacing: 60) {
-        VerticalIconButton(text: "My List", image: "plus") {
-              //
-          }
-        // Rate
-        VerticalIconButton(text: "Rate", image: "hand.thumbsup") {
-              //
-          }
-        // Share
-        VerticalIconButton(text: "Share", image: "square.and.arrow.up") {
-              //
-          }
-
-          Spacer()
-      }
-      .padding(.leading, 20)
+    init(movie: Movie) {
+        _viewModel = StateObject(wrappedValue: MovieDetailViewModel(movie: movie))
     }
 
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+              MovieDetailHeroView(url: viewModel.movie.getImageUrl())
+                MovieIntroSection(movie: viewModel.movie)
+                    .padding(.horizontal, 10)
+                ActionButtonsSection()
+                MovieDescriptionSection(
+                    description: viewModel.movie.description,
+                    cast: viewModel.movie.cast,
+                    creator: viewModel.movie.creators
+                )
+                .padding(.horizontal, 10)
+
+
+                // Only For TVShows
+              if(!viewModel.movie.isMovie) {
+                SeasonSelectionButton(
+                    selectedSeason: $viewModel.selectedSeason,
+                    showSeasonPicker: $viewModel.showSeasonPicker
+                )
+                .padding(.horizontal, 10)
+
+              EpisodeList(season: viewModel.movie.seasons![viewModel.selectedSeason])
+              }
+
+            }
+        }
+        .overlay(
+            SeasonPickerOverlay(
+                showSeasonPicker: $viewModel.showSeasonPicker,
+                selectedSeason: $viewModel.selectedSeason,
+                seasonCount: viewModel.movie.numberOfSeasons ?? 0
+            )
+        )
+        .onChange(of: viewModel.selectedSeason) { newSeason in
+            viewModel.loadEpisodes(for: newSeason)
+        }
+    }
 }
+
+
+// MARK: - Episode List for a Season
+struct EpisodeList: View {
+    let season: Season
+
+    var body: some View {
+        VStack(alignment: .leading) {
+          ForEach(season.episodes, id: \.id) { episode in
+            CustomEpisodeView(episode: episode)
+              .padding(.bottom, 20)
+            }
+        }
+    }
+}
+
+
 
 #Preview {
-    MovieDetailView()
-    .preferredColorScheme(.dark)
+    MovieDetailView(movie: dummyMovie)
+        .preferredColorScheme(.dark)
 }
-
-
-
-
