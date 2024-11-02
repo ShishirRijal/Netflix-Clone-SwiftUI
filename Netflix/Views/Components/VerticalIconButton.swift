@@ -21,10 +21,10 @@ struct VerticalIconButton: View {
             VStack {
                 Image(systemName: image)
                 .padding(.bottom, 5)
-                .font(.title)
+                .font(.title3)
 
                 Text(text)
-                .font(.bodyFont)
+                .font(.customFont(.regular, 14))
             }
             .foregroundColor(.primaryFontColor)
         }
