@@ -31,7 +31,7 @@ struct MainTabView: View {
                     }
                     .tag(Tabs.comingSoon)
 
-            Text("Downloads")
+            DownloadsView()
                     .tabItem {
                       CustomTabLabel(title: "Downloads", icon: "arrow.down.to.line")
                     }
