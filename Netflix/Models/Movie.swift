@@ -10,7 +10,7 @@ import Foundation
 struct Movie: Codable, Identifiable {
     let id: Int
     let title: String
-    let description: String
+    let overview: String
     let releaseDate: String
     let posterPath: String?
     let creators: String
@@ -37,7 +37,6 @@ struct Movie: Codable, Identifiable {
         return "https://image.tmdb.org/t/p/w500" + (backdropPath ?? "/3EpZ2ksjijmdr8BhISP03PYzNFW.jpg")
     }
 
-
 }
 
 enum MovieType {
@@ -58,7 +57,7 @@ struct MovieResponse: Codable {
 let dummyMovie = Movie(
   id: 1,
   title: "Avengers: Endgame",
-  description: "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore order to the universe.",
+  overview: "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore order to the universe.",
   releaseDate: "2019-04-26",
   posterPath: "/hPIWQT70wQK6akqfLXByEvr62u0.jpg",
   creators: "Anthony Russo, Joe Russo",
