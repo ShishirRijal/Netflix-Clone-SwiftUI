@@ -61,12 +61,13 @@ struct TVShow: Codable, Identifiable {
     let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
-        case id, name, overview, adult, popularity, voteCount
+        case id, name, overview, adult, popularity
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case firstAirDate = "first_air_date"
         case voteAverage = "vote_average"
         case genreIDs = "genre_ids"
         case originCountry = "origin_country"
+        case voteCount = "vote_count"
     }
 }

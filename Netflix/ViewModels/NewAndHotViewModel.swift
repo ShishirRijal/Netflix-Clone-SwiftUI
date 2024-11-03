@@ -18,7 +18,7 @@ class NewAndHotViewModel: ObservableObject {
   // Function to fetch popular movies
   func fetchMovies() {
     loading = true
-    guard let url = URL(string: Constant.upcomingUrl) else {
+    guard let url = URL(string: Constant.upcoming) else {
           print("Invalid URL")
           return
       }
