@@ -7,63 +7,67 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-
 struct SearchView: View {
-  @State var searchText: String = ""
+    @StateObject private var viewModel = SearchViewModel()
 
-  var body: some View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack(spacing: 20) {
+                Image(systemName: "magnifyingglass")
+                TextField("Search for a show, movie, genre, etc.", text: $viewModel.searchText)
+            }
+            .padding(.vertical, 20)
+            .padding(.horizontal, 20)
+            .background(Color.customGrayDark2)
+            .font(.customFont(.light, 18))
 
-    VStack (alignment: .leading) {
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .padding()
+            } else {
+              Text(viewModel.searchText == "" ? "Top Searches": "Search Results")
+                    .font(.heroHeaderFont)
+                    .padding()
 
-      HStack (spacing: 20) {
-        Image(systemName: "magnifyingglass")
-        TextField("Search for a show, movie, genre, etc.", text: $searchText)
-        Spacer()
-
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.movies) { movie in
+                          TopSearchView(imageUrl: getImageUrl(path: movie.backdropPath ?? "https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5.fit_scale.size_760x427.v1582751026.png"), title: movie.title)
+                        }
+                    }
+                }
+            }
         }
-      .font(.customFont(.light, 18))
-      .padding(.vertical, 20)
-      .padding(.horizontal, 20)
-        .background(Color.customGrayDark2)
-
-      Text("Top Searches")
-        .font(.heroHeaderFont)
-        .padding()
-
-      ScrollView {
-        ForEach(0 ..< 12) { item in
-            TopSearchView(imageUrl: "https://image.tmdb.org/t/p/w500/hPIWQT70wQK6akqfLXByEvr62u0.jpg", title: "Breaking Bad")
-        }
-      }
-
-
-
-//       Push everything up
-      Spacer()
-    }
-    .ignoresSafeArea(edges: .bottom)
-    .padding(.top, 1)
-    .preferredColorScheme(.dark)
-
+        .padding(.top, 1)
+        .preferredColorScheme(.dark)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
+
+
 
 #Preview {
     SearchView()
 }
 
-
 struct TopSearchView: View {
-    let imageUrl: String
+    let imageUrl: URL?
     let title: String
 
     var body: some View {
         HStack(spacing: 20) {
-
-          WebImage(url: URL(string: imageUrl))
-                .resizable()
-                .frame(width: 146, height: 76)
-                .aspectRatio(contentMode: .fill)
+            if let imageUrl = imageUrl {
+                WebImage(url: imageUrl)
+                    .resizable()
+                    .frame(width: 146, height: 76)
+                    .aspectRatio(contentMode: .fill)
+            } else {
+                Image(systemName: "photo")
+                    .frame(width: 146, height: 76)
+                    .foregroundColor(.gray)
+            }
 
             Text(title)
                 .lineLimit(2)

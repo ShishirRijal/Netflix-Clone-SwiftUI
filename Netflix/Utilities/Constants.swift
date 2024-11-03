@@ -11,5 +11,6 @@ struct Constant {
   static let apiKey = Secrets.getAPIKey()
   static let baseUrl = "https://api.themoviedb.org/3"
   static let upcomingUrl = baseUrl + "/movie/upcoming"
-  
+  static let popular = baseUrl + "/movie/popular"
+
 }

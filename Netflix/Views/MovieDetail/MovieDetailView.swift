@@ -24,7 +24,7 @@ struct MovieDetailView: View {
                     .padding(.horizontal, 10)
                 ActionButtonsSection()
                 MovieDescriptionSection(
-                    description: viewModel.movie.description,
+                    description: viewModel.movie.overview,
                     cast: viewModel.movie.cast,
                     creator: viewModel.movie.creators
                 )
