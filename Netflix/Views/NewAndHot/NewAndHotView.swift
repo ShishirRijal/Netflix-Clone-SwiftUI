@@ -39,7 +39,7 @@ struct NewAndHotView: View {
 
 #Preview {
   NewAndHotView()
-    .preferredColorScheme(.light)
+    .preferredColorScheme(.dark)
 }
 
 
@@ -72,11 +72,13 @@ struct TagListView: View {
 
 // Recommendation View
 struct RecommendationView: View {
-  init(_ movie: Movie) {
+  var movie: NewMovie
+
+  init(_ movie: NewMovie) {
     self.movie = movie
   }
 
-  var movie: Movie
+
     var body: some View {
         GeometryReader { geometry in
             let size = geometry.size
@@ -84,7 +86,7 @@ struct RecommendationView: View {
                 HStack(alignment: .top, spacing: 10) {
                   DateView(date: movie.releaseDate)
                     Spacer()
-                  WebImage(url: URL(string: movie.getImageUrl()))
+                  WebImage(url: getImageUrl(path: movie.posterPath!))
                         .resizable()
                         .scaledToFill()
                         .frame(height: size.height - 20)
