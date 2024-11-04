@@ -71,7 +71,7 @@ struct HomeView: View {
 
 
 struct HeroSection: View {
-  let movie: NewMovie
+  let movie: Media
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -93,7 +93,7 @@ struct HeroSection: View {
                 Spacer()
 
                 // Movie Name and Tags
-              Text(movie.title)
+              Text(movie.getDisplayTitle())
                     .font(.heroHeaderFont)
                     .foregroundColor(.customWhite)
                     .lineLimit(2)
@@ -157,14 +157,18 @@ struct MoviesAndShowsView: View {
           Text("TV Shows")
             .font(.titleFont)
 
-          ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-              ForEach(viewModel.tvShows) { movie in
-                MoviePreviewView(url: getImageUrl(path: movie.posterPath ?? getPlaceholderImage()), isWatching: false)
+            ScrollView(.horizontal, showsIndicators: false) {
+              HStack(spacing: 10) {
+                ForEach(viewModel.tvShows) { movie in
+                  NavigationLink(destination: MovieDetailView(id: movie.id, isMovie: false)) {
+                    MoviePreviewView(url: getImageUrl(path: movie.posterPath ?? getPlaceholderImage()), isWatching: false)
+                  }
+                  .navigationBarHidden(true)
+
+                }
               }
             }
-          }
-          .padding(.bottom, 20)
+            .padding(.bottom, 20)
 
 
         }
@@ -174,22 +178,26 @@ struct MoviesAndShowsView: View {
 // MARK: - Updated Category View
 struct CategoryView: View {
   let title: String
-  let movies: [NewMovie]
+  let movies: [Media]
   var isWatching: Bool = false
+
 
   var body: some View {
 
     VStack(alignment: .leading) {
       Text(title)
         .font(.titleFont)
-
-      ScrollView(.horizontal, showsIndicators: false) {
-        HStack(spacing: 10) {
-          ForEach((movies).shuffled()) { movie in
-            MoviePreviewView(url: getImageUrl(path: movie.posterPath ?? getPlaceholderImage()), isWatching: false)
+      
+          ScrollView(.horizontal, showsIndicators: false) {
+          HStack(spacing: 10) {
+            ForEach((movies).shuffled()) { movie in
+              NavigationLink(destination: MovieDetailView(id: movie.id, isMovie: true)) {
+                MoviePreviewView(url: getImageUrl(path: movie.posterPath ?? getPlaceholderImage()), isWatching: false)
+              }
+            }
           }
         }
-      }
+
     }
     .padding(.bottom, 20)
   }

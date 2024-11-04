@@ -68,4 +68,5 @@ enum Tabs {
 
 #Preview {
     MainTabView()
+    .preferredColorScheme(.dark)
 }

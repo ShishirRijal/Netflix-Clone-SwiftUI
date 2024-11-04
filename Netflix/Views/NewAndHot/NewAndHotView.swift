@@ -72,9 +72,9 @@ struct TagListView: View {
 
 // Recommendation View
 struct RecommendationView: View {
-  var movie: NewMovie
+  var movie: Media
 
-  init(_ movie: NewMovie) {
+  init(_ movie: Media) {
     self.movie = movie
   }
 
@@ -84,7 +84,7 @@ struct RecommendationView: View {
             let size = geometry.size
             VStack {
                 HStack(alignment: .top, spacing: 10) {
-                  DateView(date: movie.releaseDate)
+                  DateView(date: movie.releaseDate ?? "Unknown")
                     Spacer()
                   WebImage(url: getImageUrl(path: movie.posterPath!))
                         .resizable()

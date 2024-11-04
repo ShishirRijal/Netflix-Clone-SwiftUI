@@ -55,15 +55,15 @@ extension NetworkManager {
 
 
   
-  func fetchMovies(from endpoint: MovieEndpoint, isMovie: Bool = true) async throws -> [NewMovie] {
-    
+  func fetchMovies(from endpoint: MovieEndpoint, isMovie: Bool = true) async throws -> [Media] {
+
       guard let url = endpoint.url else {
           print("url error")
           throw NetworkError.badUrlResponse
       }
 
       return try await withCheckedThrowingContinuation { continuation in
-          performRequest(url: url) { (result: Result< NewMovieResponse, Error>) in
+          performRequest(url: url) { (result: Result<MediaResponse, Error>) in
               switch result {
               case .success(let response):
                 print("success")
@@ -78,14 +78,14 @@ extension NetworkManager {
 
 
 
-  func fetchTVShows(from endpoint: TVShowEndpoint) async throws -> [TVShow] {
+  func fetchTVShows(from endpoint: TVShowEndpoint) async throws -> [Media] {
     guard let url = endpoint.url else {
       print("url error")
       throw NetworkError.badUrlResponse
     }
 
     return try await withCheckedThrowingContinuation { continuation in
-      performRequest(url: url) { (result: Result<TVShowResponse, Error>) in
+      performRequest(url: url) { (result: Result<MediaResponse, Error>) in
         switch result {
         case .success(let response):
           print("success")
@@ -106,20 +106,20 @@ extension NetworkManager {
 // MARK: - ViewModel
 @MainActor
 class HomeViewModel: ObservableObject {
-    @Published var trendingMovies: [NewMovie] = []
-    @Published var popularMovies: [NewMovie] = []
-    @Published var netflixOriginals: [NewMovie] = []
-    @Published var topRatedMovies: [NewMovie] = []
-    @Published var featuredMovie: NewMovie?
+    @Published var trendingMovies: [Media] = []
+    @Published var popularMovies: [Media] = []
+    @Published var netflixOriginals: [Media] = []
+    @Published var topRatedMovies: [Media] = []
+    @Published var featuredMovie: Media?
 
-    @Published var tvShows: [TVShow] = []
+    @Published var tvShows: [Media] = []
 
     @Published var isLoading = false
     @Published var error: Error?
     @Published var showError = false
 
     // Continue watching will typically come from local storage/user data
-    @Published var continueWatching: [NewMovie] = []
+    @Published var continueWatching: [Media] = []
 
     init() {
         Task {

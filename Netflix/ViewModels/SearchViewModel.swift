@@ -11,7 +11,7 @@ import Foundation
 import Combine
 
 class SearchViewModel: ObservableObject {
-    @Published var movies: [NewMovie] = []
+    @Published var movies: [Media] = []
     @Published var errorMessage: String? = nil
     @Published var searchText: String = ""
 
@@ -24,7 +24,7 @@ class SearchViewModel: ObservableObject {
 
     func fetchPopularMovies() {
       guard let url = URL(string: Constant.popular) else { return }
-        NetworkManager.shared.performRequest(url: url) { [weak self] (result: Result<NewMovieResponse, Error>) in
+        NetworkManager.shared.performRequest(url: url) { [weak self] (result: Result<MediaResponse, Error>) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):
@@ -51,7 +51,7 @@ class SearchViewModel: ObservableObject {
 
     func searchMovies(query: String) {
         guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else { return }
-        NetworkManager.shared.performRequest(url: url) { [weak self] (result: Result<NewMovieResponse, Error>) in
+        NetworkManager.shared.performRequest(url: url) { [weak self] (result: Result<MediaResponse, Error>) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):

@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct MovieIntroSection: View {
-    let movie: Movie
+  let title: String
+  let releaseDate: String
+  let rating: String
+  let isMovie: Bool
+  let numberOfSeasons: Int?
+  let runtime: Int?
+  let language: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -20,26 +26,35 @@ struct MovieIntroSection: View {
                     .tracking(4)
                     .font(.bodyFont)
             }
-            Text(movie.title)
-                .font(.customFont(.medium, 20))
+          HStack {
+            Text(title)
+              .font(.customFont(.medium, 20))
+
+            Text(language ?? "")
+              .padding(.horizontal, 5)
+                  .background(Color.grayLight1)
+          }
 
             HStack {
-              Text(String(movie.releaseDate))
-              Text("TV-MA")
-                    .padding(5)
+              Text(String(releaseDate))
+              Text(rating)
+                .padding(.horizontal, 5)
+                .padding(.vertical, 3)
                     .background(Color.grayLight1)
-
-              // If TV-Show
-              if(!movie.isMovie) {
-                Text("\(movie.numberOfSeasons!) Seasons") // replace with no. of seasons
+              
+              // Show number of seasons only if it's a TV show
+              if !isMovie {
+                Text("\(String(describing: numberOfSeasons!)) Seasons")
+              }
+              else {
+                Text(runtime?.toHoursAndMinutes() ?? "")
               }
 
             }
             .font(.bodyFont)
+            .fontWeight(.medium)
             .foregroundColor(.primaryFontColor)
         }
+
     }
-}
-#Preview {
-    MovieIntroSection(movie: dummyMovie)
 }

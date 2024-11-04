@@ -10,8 +10,8 @@ import SDWebImageSwiftUI
 
 struct DownloadsView: View {
   
-  @State var downloadedMovies: [Movie] = [dummyMovie, dummyMovie, dummyMovie]
-  
+  @State var downloadedMovies: [Media] = [dummyMovie, dummySeries, dummyMovie, dummySeries]
+
     var body: some View {
 
       VStack (alignment: .leading) {
@@ -42,7 +42,7 @@ struct DownloadsView: View {
         }
         else {
           ForEach(downloadedMovies) {movie in
-            CustomDownloadCard(movie: movie)
+            CustomDownloadCard(media: movie)
               .padding(.bottom, 10)
           }
         }
@@ -58,12 +58,12 @@ struct DownloadsView: View {
 
 
 struct CustomDownloadCard: View {
-  var movie: Movie
+  var media: Media
 
   var body: some View {
       VStack(alignment: .leading, spacing: 5) {
           HStack {
-            WebImage(url: getImageUrl(path: movie.posterPath!))
+            WebImage(url: getImageUrl(path: media.posterPath!))
                   .resizable()
                   .aspectRatio(1.7, contentMode: .fit)
                   .frame(height: 70)
@@ -73,18 +73,18 @@ struct CustomDownloadCard: View {
             VStack {
               HStack {
                 VStack(alignment: .leading) {
-                    Text(movie.title)
+                  Text(media.getDisplayTitle())
                           .font(.customFont(.medium, 16))
                           .lineLimit(2)
 
-                  Text(movie.isMovie ? "243 MB" :  "\(movie.numberOfSeasons!) Seasons | 243 MB")
+                  Text(media.isMovie ? "243 MB" :  "\(media.numberOfSeasons!) Seasons | 243 MB")
                           .font(.customFont(.light, 14))
 
                     Text("Downloaded")
                           .font(.customFont(.regular, 14))
                 }
                // Only for TVShows
-                if(!movie.isMovie) {
+                if(!media.isMovie) {
                   Spacer()
                   Image(systemName: "chevron.right")
                     .font(.title2)

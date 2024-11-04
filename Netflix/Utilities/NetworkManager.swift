@@ -12,7 +12,7 @@ import Combine
 
 import Foundation
 class NetworkManager {
-    static let shared = NetworkManager() // Singleton instance
+    static let shared = NetworkManager()
     private init() { }
 
     func performRequest<T: Codable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {

@@ -8,7 +8,7 @@
 import Foundation
 
 class NewAndHotViewModel: ObservableObject {
-    @Published var movies: [NewMovie] = []
+    @Published var movies: [Media] = []
     @Published var activeTag: String = "upcoming" // Track the active tag
     @Published var loading: Bool = false
     init() {
@@ -23,7 +23,7 @@ class NewAndHotViewModel: ObservableObject {
           return
       }
 
-    NetworkManager.shared.performRequest(url: url) { (result: Result<NewMovieResponse, Error>) in
+    NetworkManager.shared.performRequest(url: url) { (result: Result<MediaResponse, Error>) in
           switch result {
           case .success(let movieResponse):
               DispatchQueue.main.async {
