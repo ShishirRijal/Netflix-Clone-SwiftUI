@@ -43,6 +43,7 @@ struct SearchView: View {
                   }
               }
           }
+        .foregroundColor(.primaryFontColor)
           .padding(.top, 1)
           .preferredColorScheme(.dark)
         .ignoresSafeArea(edges: .bottom)

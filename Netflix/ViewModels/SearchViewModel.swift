@@ -50,7 +50,7 @@ class SearchViewModel: ObservableObject {
     }
 
     func searchMovies(query: String) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else { return }
+      guard let url = URL(string: Constant.baseUrl + "/search/movie?query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else { return }
         NetworkManager.shared.performRequest(url: url) { [weak self] (result: Result<MediaResponse, Error>) in
             DispatchQueue.main.async {
                 switch result {
