@@ -11,6 +11,9 @@ class NewAndHotViewModel: ObservableObject {
     @Published var movies: [Media] = []
     @Published var activeTag: String = "upcoming" // Track the active tag
     @Published var loading: Bool = false
+
+  var tags = ["upcoming", "hot", "released", "trending", "favourite"]
+
     init() {
         fetchMovies()
     }
