@@ -14,6 +14,11 @@
 		DB2916F12CD9549200E4F64B /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916F02CD9549200E4F64B /* DateView.swift */; };
 		DB2916F32CD954AB00E4F64B /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916F22CD954AB00E4F64B /* RecommendationView.swift */; };
 		DB2916F62CD9554E00E4F64B /* TopSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916F52CD9554E00E4F64B /* TopSearchView.swift */; };
+		DB2916F92CD9561F00E4F64B /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916F82CD9561F00E4F64B /* HeroSection.swift */; };
+		DB2916FB2CD9568300E4F64B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916FA2CD9568300E4F64B /* CategoryView.swift */; };
+		DB2916FD2CD956A700E4F64B /* MoviePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916FC2CD956A700E4F64B /* MoviePreviewView.swift */; };
+		DB2916FF2CD9573C00E4F64B /* HomeViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916FE2CD9573C00E4F64B /* HomeViewButtons.swift */; };
+		DB2917012CD9577400E4F64B /* MoviesAndShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2917002CD9577400E4F64B /* MoviesAndShowsView.swift */; };
 		DB9EB4C92CCE71B800CB46D0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */; };
 		DB9EB4CB2CCE743400CB46D0 /* VerticalIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */; };
 		DB9EB4D12CD5725000CB46D0 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4D02CD5725000CB46D0 /* Genre.swift */; };
@@ -63,6 +68,11 @@
 		DB2916F02CD9549200E4F64B /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		DB2916F22CD954AB00E4F64B /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		DB2916F52CD9554E00E4F64B /* TopSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchView.swift; sourceTree = "<group>"; };
+		DB2916F82CD9561F00E4F64B /* HeroSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSection.swift; sourceTree = "<group>"; };
+		DB2916FA2CD9568300E4F64B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		DB2916FC2CD956A700E4F64B /* MoviePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewView.swift; sourceTree = "<group>"; };
+		DB2916FE2CD9573C00E4F64B /* HomeViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewButtons.swift; sourceTree = "<group>"; };
+		DB2917002CD9577400E4F64B /* MoviesAndShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAndShowsView.swift; sourceTree = "<group>"; };
 		DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIconButton.swift; sourceTree = "<group>"; };
 		DB9EB4D02CD5725000CB46D0 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -144,6 +154,18 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		DB2916F72CD9560D00E4F64B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DB2916F82CD9561F00E4F64B /* HeroSection.swift */,
+				DB2916FA2CD9568300E4F64B /* CategoryView.swift */,
+				DB2916FC2CD956A700E4F64B /* MoviePreviewView.swift */,
+				DB2916FE2CD9573C00E4F64B /* HomeViewButtons.swift */,
+				DB2917002CD9577400E4F64B /* MoviesAndShowsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DB9EB4C72CCE71A600CB46D0 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +237,7 @@
 		DBEEDD412CC78ECE00754AE4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DB2916F72CD9560D00E4F64B /* Components */,
 				DBEEDD272CC6E56100754AE4 /* HomeView.swift */,
 			);
 			path = Home;
@@ -409,6 +432,8 @@
 				DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */,
 				DBEEDD482CC834F600754AE4 /* SearchView.swift in Sources */,
 				DB9EB4DE2CD6497F00CB46D0 /* SeasonSelectionButton.swift in Sources */,
+				DB2916FF2CD9573C00E4F64B /* HomeViewButtons.swift in Sources */,
+				DB2916F92CD9561F00E4F64B /* HeroSection.swift in Sources */,
 				DBEEDD3D2CC7832600754AE4 /* Text.swift in Sources */,
 				DBEEDD282CC6E56100754AE4 /* HomeView.swift in Sources */,
 				DBEEDD622CC9866A00754AE4 /* NewAndHotViewModel.swift in Sources */,
@@ -416,6 +441,7 @@
 				DBEEDD462CC798DA00754AE4 /* MainTabView.swift in Sources */,
 				DB9EB4D52CD5837200CB46D0 /* HelperFunctions.swift in Sources */,
 				DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */,
+				DB2917012CD9577400E4F64B /* MoviesAndShowsView.swift in Sources */,
 				DB2916EC2CD9542700E4F64B /* EmptyDownloadView.swift in Sources */,
 				DBEEDD442CC7901C00754AE4 /* CustomButton.swift in Sources */,
 				DBEEDD4C2CC8411500754AE4 /* NewAndHotView.swift in Sources */,
@@ -437,10 +463,12 @@
 				DB9EB4D72CD6461B00CB46D0 /* MovieDetailViewModel.swift in Sources */,
 				DB9EB4E42CD64A3700CB46D0 /* MovieDetailHeroView.swift in Sources */,
 				DBEEDD642CC9873E00754AE4 /* Constants.swift in Sources */,
+				DB2916FD2CD956A700E4F64B /* MoviePreviewView.swift in Sources */,
 				DB9EB4E22CD649F100CB46D0 /* SeasonPickerOverlay.swift in Sources */,
 				DB2916F12CD9549200E4F64B /* DateView.swift in Sources */,
 				DB9EB4D12CD5725000CB46D0 /* Genre.swift in Sources */,
 				DB2916EF2CD9547700E4F64B /* TagView.swift in Sources */,
+				DB2916FB2CD9568300E4F64B /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
