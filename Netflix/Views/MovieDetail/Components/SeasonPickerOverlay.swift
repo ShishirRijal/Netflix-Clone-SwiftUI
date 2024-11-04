@@ -19,7 +19,7 @@ struct SeasonPickerOverlay: View {
                 .overlay(
                     VStack(spacing: 40) {
                         Spacer()
-                        ForEach(1...seasonCount, id: \.self) { season in
+                      ForEach(1...seasonCount, id: \.self) { season in
                             Button(action: {
                                 selectedSeason = season
                                 showSeasonPicker = false

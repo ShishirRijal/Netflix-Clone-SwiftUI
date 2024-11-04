@@ -38,6 +38,7 @@ struct MainTabView: View {
                     .tag(Tabs.downloads)
         }
         .accentColor(.primaryFontColor)
+        .preferredColorScheme(.dark)
 
     }
 }
@@ -68,4 +69,5 @@ enum Tabs {
 
 #Preview {
     MainTabView()
+    .preferredColorScheme(.dark)
 }

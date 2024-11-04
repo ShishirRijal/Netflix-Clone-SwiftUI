@@ -12,3 +12,8 @@ func getImageUrl(path: String) -> URL {
   let fullPath = baseURL + path
   return URL(string: fullPath)!
 }
+
+
+func getPlaceholderImage() -> String {
+  return "https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5.fit_scale.size_760x427.v1582751026.png"
+}
