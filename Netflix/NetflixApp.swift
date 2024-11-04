@@ -12,7 +12,7 @@ struct NetflixApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
             .foregroundColor(.white)
         }
       
