@@ -22,7 +22,7 @@ class NewAndHotViewModel: ObservableObject {
   func fetchMovies() {
     loading = true
     guard let url = URL(string: Constant.upcoming) else {
-          print("Invalid URL")
+          debugPrint("Invalid URL")
           return
       }
 
@@ -35,7 +35,7 @@ class NewAndHotViewModel: ObservableObject {
               }
 
           case .failure(let error):
-              print("Error fetching movies: \(error)")
+            debugPrint("Error fetching movies: \(error)")
             self.movies = []
             self.loading = false
           }

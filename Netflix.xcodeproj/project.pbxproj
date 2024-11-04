@@ -321,18 +321,18 @@
 		DBEF09002CBC0682001FE58C /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				DBEEDD312CC774AF00754AE4 /* Info.plist */,
+				DBEEDD2C2CC773FE00754AE4 /* CustomFonts */,
+				DBEEDD342CC77BA000754AE4 /* Extensions */,
 				DBEEDD592CC972CF00754AE4 /* Models */,
 				DBEEDD562CC96E6200754AE4 /* Utilities */,
 				DBEEDD4D2CC9634D00754AE4 /* ViewModels */,
 				DBEEDD402CC78EC600754AE4 /* Views */,
-				DBEEDD342CC77BA000754AE4 /* Extensions */,
-				DBEEDD312CC774AF00754AE4 /* Info.plist */,
-				DBEEDD2C2CC773FE00754AE4 /* CustomFonts */,
 				DBEF09012CBC0682001FE58C /* NetflixApp.swift */,
 				DBEF09032CBC0682001FE58C /* ContentView.swift */,
+				DBEEDD452CC798DA00754AE4 /* MainTabView.swift */,
 				DBEF09052CBC0683001FE58C /* Assets.xcassets */,
 				DBEF09072CBC0683001FE58C /* Preview Content */,
-				DBEEDD452CC798DA00754AE4 /* MainTabView.swift */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";

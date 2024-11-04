@@ -58,7 +58,7 @@ extension NetworkManager {
   func fetchMovies(from endpoint: MovieEndpoint, isMovie: Bool = true) async throws -> [Media] {
 
       guard let url = endpoint.url else {
-          print("url error")
+          debugPrint("url error")
           throw NetworkError.badUrlResponse
       }
 
@@ -66,10 +66,10 @@ extension NetworkManager {
           performRequest(url: url) { (result: Result<MediaResponse, Error>) in
               switch result {
               case .success(let response):
-                print("success")
+                  debugPrint("success")
                   continuation.resume(returning: response.results)
               case .failure(let error):
-                  print("failure: \(error)")
+                  debugPrint("failure: \(error)")
                   continuation.resume(throwing: error)
               }
           }
@@ -80,7 +80,7 @@ extension NetworkManager {
 
   func fetchTVShows(from endpoint: TVShowEndpoint) async throws -> [Media] {
     guard let url = endpoint.url else {
-      print("url error")
+      debugPrint("url error")
       throw NetworkError.badUrlResponse
     }
 
@@ -88,10 +88,10 @@ extension NetworkManager {
       performRequest(url: url) { (result: Result<MediaResponse, Error>) in
         switch result {
         case .success(let response):
-          print("success")
+          debugPrint("success")
           continuation.resume(returning: response.results)
         case .failure(let error):
-          print("failure: \(error)")
+          debugPrint("failure: \(error)")
           continuation.resume(throwing: error)
         }
       }

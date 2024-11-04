@@ -42,7 +42,7 @@ class MovieDetailViewModel: ObservableObject {
                       self?.loadEpisodes(for: self?.selectedSeason ?? 1)
                   }
               case .failure(let error):
-                  print("Error fetching movie details: \(error)")
+                  debugPrint("Error fetching movie details: \(error)")
               }
           }
       }
@@ -80,11 +80,11 @@ class MovieDetailViewModel: ObservableObject {
                  switch result {
 
                  case .success(let seasonDetails):
-                   print("success")
+                   debugPrint("success")
 
                    self?.episodes = seasonDetails.episodes!
                  case .failure(let error):
-                     print("Error fetching episodes for season \(season): \(error)")
+                     debugPrint("Error fetching episodes for season \(season): \(error)")
                  }
              }
          }

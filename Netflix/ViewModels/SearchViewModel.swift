@@ -58,7 +58,7 @@ class SearchViewModel: ObservableObject {
                     self?.movies = response.results.isEmpty ? [] : response.results
                     self?.errorMessage = response.results.isEmpty ? "No results found" : nil
                 case .failure(let error):
-                    print("Error: \(error)")
+                    debugPrint("Error: \(error)")
                     self?.errorMessage = error.localizedDescription
                 }
             }

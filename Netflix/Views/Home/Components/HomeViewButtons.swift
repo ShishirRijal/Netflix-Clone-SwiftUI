@@ -30,7 +30,7 @@ struct HomeViewButtons: View {
             Spacer()
 
             CustomButton(title: "Play", image: "play.fill") {
-                print("Play button tapped")
+              debugPrint("Play button tapped")
             }
 
             Spacer()
