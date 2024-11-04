@@ -8,62 +8,56 @@
 import SwiftUI
 
 
+struct ProductionCompany: Codable {
+    let id: Int
+    let name: String
 
-//
-//// MARK: - TVShowResponse
-//struct TVShowResponse: Codable {
-//    let page: Int
-//    let results: [TVShow]
-//}
-//
-//// MARK: - Movie
-//struct NewMovie: Codable, Identifiable {
-//    let id: Int
-//    let title: String
-//    let overview: String
-//    let posterPath: String?
-//    let backdropPath: String?
-//    let releaseDate: String
-//    let voteAverage: Double
-//    let genreIDs: [Int]
-//    let adult: Bool
-//    let popularity: Double
-//    let voteCount: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id, title, overview, adult, popularity
-//        case posterPath = "poster_path"
-//        case backdropPath = "backdrop_path"
-//        case releaseDate = "release_date"
-//        case voteAverage = "vote_average"
-//        case genreIDs = "genre_ids"
-//        case voteCount = "vote_count"
-//    }
-//}
-//
-//// MARK: - TVShow
-//struct TVShow: Codable, Identifiable {
-//    let id: Int
-//    let name: String
-//    let overview: String
-//    let posterPath: String?
-//    let backdropPath: String?
-//    let firstAirDate: String
-//    let voteAverage: Double
-//    let genreIDs: [Int]
-//    let originCountry: [String]
-//    let adult: Bool
-//    let popularity: Double
-//    let voteCount: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id, name, overview, adult, popularity
-//        case posterPath = "poster_path"
-//        case backdropPath = "backdrop_path"
-//        case firstAirDate = "first_air_date"
-//        case voteAverage = "vote_average"
-//        case genreIDs = "genre_ids"
-//        case originCountry = "origin_country"
-//        case voteCount = "vote_count"
-//    }
-//}
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+    }
+}
+
+
+
+struct Creator: Codable {
+    let id: Int
+    let name: String
+    let profilePath: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case profilePath = "profile_path"
+    }
+}
+
+
+
+
+struct Season: Codable {
+    let airDate: String
+    let episodes: [Episode]?
+
+    enum CodingKeys: String, CodingKey {
+        case airDate = "air_date"
+        case episodes
+    }
+}
+
+struct Episode: Codable {
+    let id: Int
+    let name: String
+    let overview: String
+    let episodeNumber: Int
+    let seasonNumber: Int
+    let stillPath: String?
+    let runtime: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, overview, runtime
+        case episodeNumber = "episode_number"
+        case seasonNumber = "season_number"
+        case stillPath = "still_path"
+    }
+}
+
