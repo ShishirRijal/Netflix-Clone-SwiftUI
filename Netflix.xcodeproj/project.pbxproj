@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB2916E72CD92D6700E4F64B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916E62CD92D6700E4F64B /* Int.swift */; };
+		DB2916EA2CD953F400E4F64B /* CustomDownloadCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916E92CD953F400E4F64B /* CustomDownloadCard.swift */; };
+		DB2916EC2CD9542700E4F64B /* EmptyDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2916EB2CD9542700E4F64B /* EmptyDownloadView.swift */; };
 		DB9EB4C92CCE71B800CB46D0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */; };
 		DB9EB4CB2CCE743400CB46D0 /* VerticalIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */; };
 		DB9EB4D12CD5725000CB46D0 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EB4D02CD5725000CB46D0 /* Genre.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		DB2916E62CD92D6700E4F64B /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		DB2916E92CD953F400E4F64B /* CustomDownloadCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDownloadCard.swift; sourceTree = "<group>"; };
+		DB2916EB2CD9542700E4F64B /* EmptyDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDownloadView.swift; sourceTree = "<group>"; };
 		DB9EB4C82CCE71B800CB46D0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DB9EB4CA2CCE743400CB46D0 /* VerticalIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIconButton.swift; sourceTree = "<group>"; };
 		DB9EB4D02CD5725000CB46D0 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB2916E82CD953E600E4F64B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DB2916E92CD953F400E4F64B /* CustomDownloadCard.swift */,
+				DB2916EB2CD9542700E4F64B /* EmptyDownloadView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DB9EB4C72CCE71A600CB46D0 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		DB9EB4E72CD654C500CB46D0 /* Downloads */ = {
 			isa = PBXGroup;
 			children = (
+				DB2916E82CD953E600E4F64B /* Components */,
 				DB9EB4E82CD654D200CB46D0 /* DownloadsView.swift */,
 			);
 			path = Downloads;
@@ -362,6 +376,7 @@
 			files = (
 				DB9EB4E92CD654D200CB46D0 /* DownloadsView.swift in Sources */,
 				DB9EB4CB2CCE743400CB46D0 /* VerticalIconButton.swift in Sources */,
+				DB2916EA2CD953F400E4F64B /* CustomDownloadCard.swift in Sources */,
 				DBEEDD5B2CC972DA00754AE4 /* Media.swift in Sources */,
 				DBEEDD362CC77BAE00754AE4 /* Font.swift in Sources */,
 				DBEEDD482CC834F600754AE4 /* SearchView.swift in Sources */,
@@ -373,6 +388,7 @@
 				DBEEDD462CC798DA00754AE4 /* MainTabView.swift in Sources */,
 				DB9EB4D52CD5837200CB46D0 /* HelperFunctions.swift in Sources */,
 				DBEF09042CBC0682001FE58C /* ContentView.swift in Sources */,
+				DB2916EC2CD9542700E4F64B /* EmptyDownloadView.swift in Sources */,
 				DBEEDD442CC7901C00754AE4 /* CustomButton.swift in Sources */,
 				DBEEDD4C2CC8411500754AE4 /* NewAndHotView.swift in Sources */,
 				DBEF09022CBC0682001FE58C /* NetflixApp.swift in Sources */,
